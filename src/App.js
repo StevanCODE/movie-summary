@@ -1,9 +1,17 @@
+import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
+import Home from "./pages/Home";
+import ShowDetails from "./pages/ShowDetails";
 
 function App() {
+
   return (
-    <div>
-      <h2 class="text-green-300 text-4xl tracking-widest">Hello World</h2>
-    </div>
+    <Router>
+      <Routes>
+        {/* <Route path="*" element={<Navigate to="/" replace />}/> */}
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/shows/:showName' element={<ShowDetails/>}></Route>
+      </Routes>
+    </Router>
   );
 }
 
